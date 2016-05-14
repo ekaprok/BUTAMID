@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2073111CE66423004B4046 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C20730F1CE66423004B4046 /* FBSDKCoreKit.framework */; };
+		2C2073121CE66423004B4046 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2073101CE66423004B4046 /* FBSDKLoginKit.framework */; };
+		2C2073151CE66550004B4046 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2073141CE66550004B4046 /* test.m */; };
 		2C7DFA471CE65CA2003F140F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7DFA461CE65CA2003F140F /* AppDelegate.swift */; };
 		2C7DFA491CE65CA2003F140F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7DFA481CE65CA2003F140F /* ViewController.swift */; };
 		2C7DFA4C1CE65CA2003F140F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7DFA4A1CE65CA2003F140F /* Main.storyboard */; };
@@ -15,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C20730F1CE66423004B4046 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		2C2073101CE66423004B4046 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		2C2073131CE66550004B4046 /* GAI_TAMID-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GAI_TAMID-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C2073141CE66550004B4046 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		2C7DFA431CE65CA2003F140F /* GAI_TAMID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAI_TAMID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7DFA461CE65CA2003F140F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7DFA481CE65CA2003F140F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,12 +36,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2073121CE66423004B4046 /* FBSDKLoginKit.framework in Frameworks */,
+				2C2073111CE66423004B4046 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C20730E1CE663FF004B4046 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C20730F1CE66423004B4046 /* FBSDKCoreKit.framework */,
+				2C2073101CE66423004B4046 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2C7DFA3A1CE65CA1003F140F = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +72,15 @@
 		2C7DFA451CE65CA2003F140F /* GAI_TAMID */ = {
 			isa = PBXGroup;
 			children = (
+				2C20730E1CE663FF004B4046 /* Frameworks */,
 				2C7DFA461CE65CA2003F140F /* AppDelegate.swift */,
 				2C7DFA481CE65CA2003F140F /* ViewController.swift */,
 				2C7DFA4A1CE65CA2003F140F /* Main.storyboard */,
 				2C7DFA4D1CE65CA2003F140F /* Assets.xcassets */,
 				2C7DFA4F1CE65CA2003F140F /* LaunchScreen.storyboard */,
 				2C7DFA521CE65CA2003F140F /* Info.plist */,
+				2C2073141CE66550004B4046 /* test.m */,
+				2C2073131CE66550004B4046 /* GAI_TAMID-Bridging-Header.h */,
 			);
 			path = GAI_TAMID;
 			sourceTree = "<group>";
@@ -138,6 +159,7 @@
 			files = (
 				2C7DFA491CE65CA2003F140F /* ViewController.swift in Sources */,
 				2C7DFA471CE65CA2003F140F /* AppDelegate.swift in Sources */,
+				2C2073151CE66550004B4046 /* test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,10 +270,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GAI_TAMID",
+				);
 				INFOPLIST_FILE = GAI_TAMID/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.GAI-TAMID";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GAI_TAMID/GAI_TAMID-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -259,10 +288,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GAI_TAMID",
+				);
 				INFOPLIST_FILE = GAI_TAMID/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.GAI-TAMID";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GAI_TAMID/GAI_TAMID-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -285,6 +320,7 @@
 				2C7DFA571CE65CA2003F140F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
